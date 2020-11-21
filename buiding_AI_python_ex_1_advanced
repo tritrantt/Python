@@ -1,0 +1,15 @@
+import itertools
+portnames = ["PAN", "AMS", "CAS", "NYC", "HEL"]
+ 
+def permutations(route, ports):
+    # write the recursive function here
+    # remember to print out the route as the recursion ends
+    perms = itertools.permutations(ports)
+    for i in perms:
+        output = [portnames[0]]
+        for j in i:
+            output.append(portnames[j])
+        print(output)
+
+# this will start the recursion with 0 as the first stop
+permutations([0], list(range(1, len(portnames))))
